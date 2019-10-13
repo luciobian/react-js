@@ -1,10 +1,19 @@
 import React from 'react';
 
-class BlogPostsList extends React.Component{
+class BlogPostsList extends React.Component {
 
-    render(){
-        return <div>BlogPostsList component!</div>
-    }
+  constructor(props) {
+    super(props);
+    console.log(props);
+  }
+  render() {
+    const {posts} = this.props;
+    return (
+      <ul>
+        {posts && posts.map(post => (<li key={ post.id }> { post.title } </li>))}
+      </ul>  
+    );
+  }
 
 }
 
